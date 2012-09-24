@@ -320,6 +320,8 @@ bool Core::setProcessorState(uint32_t reg, uint32_t value)
   case PS_BOOT_STATUS:
     bootStatus = value;
     return true;
+	case PS_RING_OSC_CTRL:
+		return true;
   }
   return false;
 }
@@ -339,6 +341,9 @@ bool Core::getProcessorState(uint32_t reg, uint32_t &value)
   case PS_BOOT_STATUS:
     value = bootStatus;
     return true;
+	case PS_RING_OSC_DATA0:
+		value = 42;
+		return true;
   }
   return false;
 }
